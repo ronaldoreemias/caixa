@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>sistema de caixa</title>
+</head>
+<body>
+    <div id="login-modal" class="login-modal">
+        <div class="login-modal-content">
+            <h2>Login</h2>
+            <input type="text" id="username" placeholder="Username">
+            <input type="password" id="password" placeholder="Password">
+            <button id="login-button">Login</button>
+            <p id="error-message" style="color: red; display: none;">Credenciais inválidas</p>
+        </div>
+    </div>
+    
+
+    <div class="caixa">
+        <div class="header-content">
+            <div style="width: 100%; color: aliceblue; text-align: center;">
+                <h1>sistema de caixa</h1>
+            </div>
+            <div class="product-registration">
+                <p>Cadastrar Produto</p>
+                <input type="text" id="product-name" placeholder="Nome do Produto">
+                <input type="number" id="product-value" placeholder="Valor do Produto">
+                <button onclick="registerProduct()">Cadastrar Produto</button>
+            </div>
+            <div class="payment-section">
+                <p>Pagamento</p>
+                <div id="installments-section" style="display: none;">
+                    <input type="number" id="installments" placeholder="Número de Parcelas">
+                </div>
+                <input type="number" id="amount-paid" placeholder="Valor Pago">
+                <div style="display: flex;width: 100%; background-color: rgba(0, 255, 255, 0)(0, 255, 255, 0);">
+                    <p>FORMA DE PAGAMENTO :</p>
+                    <select id="payment-method" style="width: 100px; height: 50px; margin: 5px;" onchange="showInstallments()">
+                        <option value="pix">Pix</option>
+                        <option value="debito">Débito</option>
+                        <option value="credito">Crédito</option>
+                        <option value="dinheiro">Dinheiro</option>
+                    </select>
+                    <button style="width: 100px; margin: 10px;" onclick="calculateChange()">Calcular Troco</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div style="width: 100%; background-color: rgba(236, 8, 8, 0.726); color: rgb(255, 255, 255); text-align: center;">
+            <h1>historico</h1>
+        </div>
+        <div class="historico_produto" id="main-content" style="background-color: aliceblue;">
+            <div class="card " >
+            </div>
+            <div class="historico">
+                <div class="conteudo_historico"></div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div id="result" class="result-box"></div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+</html>
