@@ -157,32 +157,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const errorMessage = document.getElementById('error-message');
 
     // Função para validar o login
-    function validateLogin() {
-        const username = usernameInput.value;
-        const password = passwordInput.value;
-        if (username === 'ronaldo' && password === 'admin123') {  // Substitua pelo usuário e senha corretos
-            loginModal.style.display = 'none';
-        } else {
-            errorMessage.style.display = 'block';
-        }
-    }
-
-    // Adiciona evento ao botão de login
-    loginButton.addEventListener('click', validateLogin);
-
-    // Adiciona evento à tecla Enter
-    usernameInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            validateLogin();
-        }
-    });
-
-    passwordInput.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            validateLogin();
-        }
-    });
-
-    // Exibe o modal ao carregar a página
-    loginModal.style.display = 'flex';
-});
+  
